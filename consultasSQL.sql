@@ -69,11 +69,17 @@ go
 
 	// ****************  \\	
 -- Actualizar con Variable
-DECLARE @nombreVariable nombreCampo = ValorActualizar
+DECLARE @nombreVariable tipoDato = ValorActualizar
 UPDATE 	nombreTabla
 SET nombreCampo = nombreCampo +- o = @nombreVariable
 WHERE YEAR(campoFecha) = 2016 -- YEAR es un ejemplo si queremos actualizar por un campoFecha solo por el año
 go
+--declare @nombreVariable varchar(30) = 'ING Sistemas'
+--update carrera
+--set carrera = @nombreVariable
+--where id_car=1
+
+
 
 -- ## Glosario ## 
 

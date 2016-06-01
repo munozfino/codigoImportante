@@ -68,6 +68,11 @@ CHECK ( nombreCampo <= getdata() )
 go
 
 	// ****************  \\	
+-- Crear Variables
+DECLARE @carrera varchar -- se declara la variable
+SET @carrera=2 -- Se asigna valores a la variable en este caso = 2
+
+	// ****************  \\	
 -- Actualizar con Variable
 DECLARE @nombreVariable tipoDato = ValorActualizar
 UPDATE 	nombreTabla
@@ -78,6 +83,7 @@ go
 --update carrera
 --set carrera = @nombreVariable
 --where id_car=1
+
 
 
 

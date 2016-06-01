@@ -140,7 +140,14 @@ AS
 	EXEC @VariableRetorno = proIf NULL --Ejecutamos el procedimiento y lo igualamos a la varible que retorna los datos y le enviamos el parametro al procedimiento en este caso es NULL
 	SELECT @VariableRetorno --Ejecutamos la variable para mostrar lo que retorna
 
-
+	// ****************  \\	
+--Iformacio de los procedimientos almacenados
+	SP_HELP --Muetra todos los Objetos de la base de datos
+	SP_HELPTEXT nombreProcedimiento --Describe el procedimiento almacenado
+	SP_STORED_PROCEDURES --Muestra todos los procedimiento almacenado
+	SP_DEPENDS nombreProcedimiento /* 1) nombre,tipo,campos,etc.. de los objetos de los cuales depende el objeto enviado
+									  2) nombre y tipo de los objetos que dependendel objeto nnombredo */
+    SELECT * FROM SYSOBJECTS --Muestra nombre y varios datos de todos los Objetos de la base de datos	
 
 -- ## Glosario ## 
 

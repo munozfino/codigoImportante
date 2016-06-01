@@ -141,6 +141,17 @@ AS
 	SELECT @VariableRetorno --Ejecutamos la variable para mostrar lo que retorna
 
 	// ****************  \\	
+--Encriptar procedimientos almacenados
+	CREATE PROCEDURE procedimientoEncriptado
+	@id_car INT
+	WITH ENCRYPTION --Codigo para Encriptar los procedimientos almacenados
+	AS
+	SELECT * FROM alumno where id_car=@id_car
+
+	EXEC procedimientoEncriptado 1 --Llamamos el procedimiento
+	SP_HELPTEXT procedimientoEncriptado -- Nos da error al ejecutar por que esta encriptado
+	
+	// ****************  \\	
 --Iformacio de los procedimientos almacenados
 	SP_HELP --Muetra todos los Objetos de la base de datos
 	SP_HELPTEXT nombreProcedimiento --Describe el procedimiento almacenado

@@ -115,6 +115,32 @@ SET @parametroSalida = (SELECT nombre FROM alumno WHERE nombre=@nombre)
 DECLARE @varibleSalida VARCHAR(100) --Declaramos una variable de salida
 EXEC paramtroSalida Fabian, @varibleSalida OUTPUT --Ejecutamos el procedimiento pasando los dos parametros creados, el de entrada y el de salida
 SELECT @varibleSalida -- as alias nombre campo  --Mostramos el resultado llamando a la variable o parametro de salida
+--Otro Ejemplo 
+--create procedure sp_parametrosIf
+--@id_car int,
+--@nombreCarrera varchar (100) output
+--as 
+-- set @nombreCarrera = (select carrera from carrera where id_car=@id_car)
+
+-- declare @car varchar (100)
+-- exec sp_parametrosIf 2,@car output
+-- select @car as nombreCampo
+
+	// ****************  \\	
+-- Control de flujo con IF -- Procedimieto almacenado con clausula IF
+CREATE PROCEDURE procedimientoIf
+@id_car INT
+AS 
+	IF(@id_car IS NULL) -- Creamos el if y le indicamos que si el parametro que recibe es igual a NULL
+		RETURN 0
+	ELSE
+		RETURN 1
+--Llamamos o ejecutamos el procedimiento almacenado
+	DECLARE @VariableRetorno INT --Primero debemos crear una variable para mostrar lo que retorna el procedimiento
+	EXEC @VariableRetorno = proIf NULL --Ejecutamos el procedimiento y lo igualamos a la varible que retorna los datos y le enviamos el parametro al procedimiento en este caso es NULL
+	SELECT @VariableRetorno --Ejecutamos la variable para mostrar lo que retorna
+
+
 
 -- ## Glosario ## 
 

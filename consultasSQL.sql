@@ -96,13 +96,25 @@ EXECUTE nombreProcedimiento
 EXEC nombreProcedimiento
 
 	// ****************  \\	
--- Crear procedimiento Almacenado con parametros
+-- Crear procedimiento Almacenado con parametros de entrada
 CREATE PROCEDURE conParametros
 @nombre VARCHAR(100), -- varible de tipo strig
 @id_car INT	-- variable de tipo integer
 AS
 SELECT * FROM alumno WHERE nombre=@nombre AND id_car=@id_car -- En la consulta se envian los parametros
 
+	// ****************  \\	
+-- Crear procedimiento Almacenado con parametros de Salida
+CREATE PROCEDURE paramtroSalida
+@nombre VARCHAR (100), -- Parametro entrada
+@parametroSalida VARCHAR (100) OUTPUT -- Parametro salida
+AS 
+SET @parametroSalida = (SELECT nombre FROM alumno WHERE nombre=@nombre)
+
+--Llamar o ejecutar Procedimieto almacenado con parametros de entrada y salida
+DECLARE @varibleSalida VARCHAR(100) --Declaramos una variable de salida
+EXEC paramtroSalida Fabian, @varibleSalida OUTPUT --Ejecutamos el procedimiento pasando los dos parametros creados, el de entrada y el de salida
+SELECT @varibleSalida -- as alias nombre campo  --Mostramos el resultado llamando a la variable o parametro de salida
 
 -- ## Glosario ## 
 

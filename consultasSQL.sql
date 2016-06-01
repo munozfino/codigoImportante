@@ -84,7 +84,24 @@ go
 --set carrera = @nombreVariable
 --where id_car=1
 
+	// ****************  \\	
+-- Crear procedimiento Almacenado
+CREATE PROCEDURE nombreProcedimiento
+AS
+sentencia a ejecutar -- Ejemplo select carrera from carrera where id_car=1;
 
+	// ****************  \\	
+-- Llamar o ejecutar procedimiento
+EXECUTE nombreProcedimiento
+EXEC nombreProcedimiento
+
+	// ****************  \\	
+-- Crear procedimiento Almacenado con parametros
+CREATE PROCEDURE conParametros
+@nombre VARCHAR(100), -- varible de tipo strig
+@id_car INT	-- variable de tipo integer
+AS
+SELECT * FROM alumno WHERE nombre=@nombre AND id_car=@id_car -- En la consulta se envian los parametros
 
 
 -- ## Glosario ## 

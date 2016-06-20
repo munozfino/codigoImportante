@@ -61,6 +61,14 @@ DEFAULT GETDATE() FOR campoEjemplo de tipo FECHA
 go	
 
 	// ****************  \\	
+--Utilizar DEFAULT -- crear un campo en una tabla por defecto 1	
+ALTER TABLE MAIN_FormPayment
+ADD estado char(1) NOT NULL
+DEFAULT '1'
+go	
+	// ****************  \\	
+
+	// ****************  \\	
 -- Ingresar una restriccion CHECK, Para controlar que no se ingresen fechas mayores a la fecha actual
 ALTER TABLE nombreTabla
 ADD CONSTRAINT CHK_nombreTabla_nombreCampo
